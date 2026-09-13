@@ -11,8 +11,6 @@ import android.webkit.WebViewClient
 
 /**
  * Thin native Android shell around the original CodeNevis HTML application.
- * No AndroidX dependency is required; all behavior remains inside the original
- * offline HTML/CSS/JavaScript asset.
  */
 class MainActivity : Activity() {
 
@@ -58,12 +56,8 @@ class MainActivity : Activity() {
     }
 
     override fun onDestroy() {
-        webView.apply {
-            stopLoading()
-            webChromeClient = null
-            webViewClient = null
-            destroy()
-        }
+        webView.stopLoading()
+        webView.destroy()
         super.onDestroy()
     }
 }
