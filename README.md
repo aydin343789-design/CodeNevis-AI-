@@ -1,21 +1,45 @@
-# کدنویس — نسخه Android/Kotlin
+# CodeNevis AI | کدنویس
 
-این پروژه یک پوستهٔ Android با Kotlin است که فایل اصلی `CodeNevisAI.html` را به‌صورت محلی داخل WebView اجرا می‌کند.
+اپلیکیشن آموزشی آفلاین برنامه‌نویسی برای یادگیری **Python، HTML، PHP، C++ و JavaScript**؛ همراه با درس‌های مرحله‌ای، تمرین، پروژه‌های عملی، سیستم پیشرفت و گواهینامهٔ پایان دوره.
 
-هدف این ساختار حفظ کامل ظاهر، رنگ‌بندی Luxury، منطق چت‌بات، درس‌ها، کوییزها، پیشرفت، XP، مدال‌ها، پرمیوم، واژه‌نامه، گواهینامه و ذخیره‌سازی آفلاین فایل اصلی است؛ بنابراین منطق آموزشی موجود در HTML بازنویسی یا تغییر داده نشده است.
+## ویژگی‌ها
 
-## اجرا
+- آموزش پنج زبان برنامه‌نویسی در مسیرهای جداگانه
+- درس، آزمون و تمرین برای هر سطح
+- پروژهٔ عملی در پایان مسیرها
+- ذخیرهٔ پیشرفت، XP، مدال‌ها و واژه‌نامه
+- تجربهٔ فارسی و قابل استفادهٔ آفلاین
+- پوستهٔ Android سبک با اجرای محتوای محلی در WebView
 
-پروژه را در Android Studio باز کنید و ماژول `app` را اجرا کنید.
+## معماری
 
-فایل آموزشی در این مسیر قرار دارد:
+این نسخه یک پوستهٔ Android/Kotlin است که فایل آموزشی اصلی را به‌صورت محلی اجرا می‌کند:
 
-`app/src/main/assets/CodeNevisAI.html`
+```text
+app/src/main/assets/CodeNevisAI.html
+```
 
-برنامه برای اجرای محلی فایل HTML به مجوز اینترنت نیاز ندارد.
+منطق آموزشی، ظاهر، چت‌بات، درس‌ها، کوییزها و سیستم پیشرفت در asset محلی نگهداری می‌شوند.
 
-## Offline/minimal-dependency edition
+## اجرا در Android Studio
 
-This project has been prepared for offline-friendly builds with zero AndroidX runtime dependencies. The Android shell uses only framework APIs, while the original HTML/CSS/JavaScript application remains the local asset and is not modified.
+1. مخزن را clone کنید.
+2. پروژه را در Android Studio باز کنید.
+3. ماژول `app` را اجرا کنید.
+4. فایل `app/src/main/assets/CodeNevisAI.html` را برای محتوای آموزشی بررسی کنید.
 
-See `OFFLINE-BUILD.md` for offline build requirements and steps.
+ساختار پروژه برای اجرای محلی و کم‌وابستگی آماده شده است. جزئیات build آفلاین در [`OFFLINE-BUILD.md`](./OFFLINE-BUILD.md) قرار دارد.
+
+## ساخت خط فرمان
+
+در محیط دارای Android SDK:
+
+```bash
+./gradlew assembleDebug
+```
+
+برای ساخت کامل و انتشار artifact، workflowهای موجود در `.github/workflows` را در GitHub Actions اجرا کنید.
+
+## وضعیت پروژه
+
+پروژه در حال توسعه است. قبل از استفادهٔ production، محتوای آموزشی، سازگاری نسخه‌های Android و فرایند صدور گواهینامه را در محیط هدف تست کنید.
